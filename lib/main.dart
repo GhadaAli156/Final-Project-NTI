@@ -18,12 +18,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
 
-      initialRoute: AppRoutes.splash,
+      initialRoute: AppRoutes.details,
       routes: {
         AppRoutes.splash: (context) => SplashScreen(),
         AppRoutes.onboarding: (context) => OnboardingScreen(),
         AppRoutes.login: (context) => LoginScreen(),
         AppRoutes.signup: (context) => SignupScreen(),
+        AppRoutes.details:(context) => OrderDetailsScreen()
       },
       debugShowCheckedModeBanner: false,
     );

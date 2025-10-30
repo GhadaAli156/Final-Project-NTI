@@ -16,10 +16,10 @@ class OrderInfoCard extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(12),
             child: Container(
-              color: Colors.white, // ✅ الخلفية البيضاء
+              color: Colors.white, 
               width: 80,
               height: 80,
-              child: Image.asset("assets/images/shoe.png", fit: BoxFit.contain),
+              child: Image.asset("assets/image2.png", fit: BoxFit.contain),
             ),
           ),
 

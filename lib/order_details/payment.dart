@@ -6,7 +6,10 @@ class PaymentMethodCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(color: Colors.grey[300], borderRadius: BorderRadius.circular(15)),
+      decoration: BoxDecoration(
+        color: Colors.grey[300],
+        borderRadius: BorderRadius.circular(15),
+      ),
       padding: const EdgeInsets.all(12),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -15,7 +18,10 @@ class PaymentMethodCard extends StatelessWidget {
             children: [
               const Icon(Icons.credit_card, size: 20),
               const SizedBox(width: 8),
-              const Text("Credit Card", style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
+              const Text(
+                "Credit Card",
+                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+              ),
               const Spacer(),
               const Icon(Icons.edit, size: 18),
             ],
@@ -28,12 +34,14 @@ class PaymentMethodCard extends StatelessWidget {
           const SizedBox(height: 6),
           const Row(
             children: [
-              Icon(Icons.verified, size: 14, color: Colors.blue),
-              SizedBox(width: 4),
+              Text(
+                "Secure checkout powered by",
+                style: TextStyle(fontSize: 11, color: Colors.grey),
+              ),
               Expanded(
                 child: Text(
-                  "Secure checkout powered by Reserve Bank of India RBI",
-                  style: TextStyle(fontSize: 11, color: Colors.blue),
+                  " Reserve Bank of India RBI",
+                  style: TextStyle(fontSize: 12, color: Colors.blue),
                 ),
               ),
             ],

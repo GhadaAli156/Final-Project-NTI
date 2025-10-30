@@ -14,7 +14,6 @@ class DeliveryAddressCard extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // ✅ الجزء الخاص بالنصوص على اليسار
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,23 +55,14 @@ class DeliveryAddressCard extends StatelessWidget {
             ),
           ),
 
-          const SizedBox(width: 10),
-          Image.asset(
-            "assets/images/map.png",
-            width: 120, // ✅ هنا التحكم في العرض
-            height: 120, // ✅ هنا التحكم في الارتفاع
-            fit: BoxFit.contain,
+          const SizedBox(width: 20),
+          Flexible(
+            child: Image.network(
+              "https://developers.google.com/static/maps/solutions/images/store-locator/autocomplete.png?hl=ar",
+              height: 100,
+              fit: BoxFit.cover,
+            ),
           ),
-          // // ✅ الصورة على اليمين
-          // ClipRRect(
-          //   borderRadius: BorderRadius.circular(12),
-          //   child: Image.asset(
-          //     "assets/images/map.png",
-          //     width: 120,   // ✅ هنا التحكم في العرض
-          //     height: 120,  // ✅ هنا التحكم في الارتفاع
-          //     fit: BoxFit.contain,
-          //   ),
-          // ),
         ],
       ),
     );
