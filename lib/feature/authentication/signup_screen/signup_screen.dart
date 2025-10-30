@@ -4,8 +4,8 @@ import 'package:project_nti_app/feature/authentication/login_screen/login_screen
 import 'package:project_nti_app/feature/authentication/widget/custom_app_bar.dart';
 import 'package:project_nti_app/feature/authentication/widget/custom_text_field.dart';
 import 'package:project_nti_app/feature/authentication/widget/custom_another_account.dart';
+import 'package:project_nti_app/feature/home/home.dart';
 import '../../../core/widget/button_1.dart';
-import '../../home_screen/home_screen.dart';
 import '../cubit/logic.dart';
 import '../cubit/states.dart';
 
@@ -203,7 +203,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const HomeScreen(),
+                    builder: (context) => const Home(),
                   ),
                 );
               }

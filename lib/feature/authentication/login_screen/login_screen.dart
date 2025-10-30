@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:project_nti_app/feature/authentication/widget/custom_app_bar.dart';
 import 'package:project_nti_app/feature/authentication/widget/custom_text_field.dart';
-import 'package:project_nti_app/feature/authentication/widget/custom_another_account.dart';
 import '../../../core/widget/button_1.dart';
-import '../../home_screen/home_screen.dart';
+import '../../home/home.dart';
 import '../cubit/logic.dart';
 import '../cubit/states.dart';
 import '../signup_screen/signup_screen.dart';
@@ -196,7 +195,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const HomeScreen(),
+                    builder: (context) => const Home(),
                   ),
                 );
               }

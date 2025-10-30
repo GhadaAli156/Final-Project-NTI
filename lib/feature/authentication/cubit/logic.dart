@@ -1,20 +1,19 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:project_nti_app/core/firebase/firebase_db.dart';
 import 'package:project_nti_app/feature/authentication/cubit/states.dart';
-
 import '../models/user_model.dart';
-import '../service/firebase_services.dart';
 
 
 class UserCubit extends Cubit<UserState> {
-  final FirebaseService _firebaseService;
+  final FirebaseDataBase _firebaseDataBase;
 
-  UserCubit(this._firebaseService) : super(UserInitial());
+  UserCubit(this._firebaseDataBase) : super(UserInitial());
 
 
   Future<void> signUp(String name, String email, String password) async {
     emit(UserLoading());
     try {
-      final user = await _firebaseService.signUp(
+      final user = await _firebaseDataBase.signUp(
         name: name,
         email: email,
         password: password,
@@ -28,7 +27,7 @@ class UserCubit extends Cubit<UserState> {
   Future<void> signIn(String email, String password) async {
     emit(UserLoading());
     try {
-      final user = await _firebaseService.signIn(email, password);
+      final user = await _firebaseDataBase.signIn(email, password);
       emit(UserSuccess(user));
     } catch (e) {
       emit(UserError(e.toString()));
@@ -39,7 +38,7 @@ class UserCubit extends Cubit<UserState> {
   Future<void> updateFavList(UserModel user, List<String> favList) async {
     emit(UserLoading());
     try {
-      await _firebaseService.updateFavList(user.id, favList);
+      await _firebaseDataBase.updateFavList(user.id, favList);
       final updatedUser = UserModel(
         id: user.id,
         name: user.name,
@@ -58,7 +57,7 @@ class UserCubit extends Cubit<UserState> {
   Future<void> signOut() async {
     emit(UserLoading());
     try {
-      await _firebaseService.signOut();
+      await _firebaseDataBase.signOut();
       emit(UserLoggedOut());
     } catch (e) {
       emit(UserError(e.toString()));
