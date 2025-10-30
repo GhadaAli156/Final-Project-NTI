@@ -51,15 +51,8 @@ class _CategorySelectorState extends State<CategorySelector> {
               decoration: BoxDecoration(
                 gradient: isSelected
                     ? ColorManager.primaryColorGradient
-                    : const LinearGradient(colors: [Colors.white, Colors.white]),
+                    : const LinearGradient(colors: [Colors.transparent, Colors.transparent]),
                 borderRadius: BorderRadius.circular(SizeConfig.w(50)),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.08),
-                    blurRadius: 6,
-                    offset: const Offset(1, 3),
-                  ),
-                ],
               ),
               child: Row(
                 children: [
@@ -80,7 +73,7 @@ class _CategorySelectorState extends State<CategorySelector> {
                     child: Icon(
                       category['icon'],
                       color: Colors.black54,
-                      size: SizeConfig.w(22),
+                      size: SizeConfig.w(28),
                     ),
                   ),
                   SizedBox(width: SizeConfig.w(8)),

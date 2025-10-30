@@ -16,7 +16,7 @@ class CustomSearchFilter extends StatelessWidget {
           child: Container(
             padding: EdgeInsets.symmetric(
               horizontal: SizeConfig.w(12),
-              vertical: SizeConfig.h(8),
+              vertical: SizeConfig.h(16),
             ),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(SizeConfig.w(30)),
@@ -26,7 +26,7 @@ class CustomSearchFilter extends StatelessWidget {
               children: [
                 Icon(
                   Icons.search,
-                  size: SizeConfig.w(22),
+                  size: SizeConfig.w(24),
                   color: Colors.grey[700],
                 ),
                 SizedBox(width: SizeConfig.w(8)),
@@ -34,7 +34,7 @@ class CustomSearchFilter extends StatelessWidget {
                   'What do you need?',
                   style: TextStyle(
                     color: Colors.grey[700],
-                    fontSize: SizeConfig.w(14),
+                    fontSize: SizeConfig.w(16),
                   ),
                 ),
               ],
@@ -49,7 +49,7 @@ class CustomSearchFilter extends StatelessWidget {
                 borderRadius: BorderRadius.vertical(top: Radius.circular(25)),
               ),
               backgroundColor: Colors.white,
-                builder: (_) => FilterBottomSheet(),
+              builder: (_) => FilterBottomSheet(),
 
             );
           },
@@ -62,8 +62,8 @@ class CustomSearchFilter extends StatelessWidget {
             ),
             child: Image.asset(
               'assets/filter.png',
-              width: SizeConfig.w(24),
-              height: SizeConfig.h(24),
+              width: SizeConfig.w(28),
+              height: SizeConfig.h(28),
               fit: BoxFit.contain,
             ),
           ),
