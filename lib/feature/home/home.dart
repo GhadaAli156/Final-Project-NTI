@@ -4,7 +4,6 @@ import 'package:project_nti_app/feature/home_screen/home_screen_product.dart';
 import 'package:project_nti_app/feature/profile_screen/profile_screen.dart';
 
 import '../favorite_screen/favorite_screen.dart';
-import '../home_screen/widget/custom_home_app_bar.dart';
 import '../notification_screen/notification_screen.dart';
 
 class Home extends StatefulWidget {

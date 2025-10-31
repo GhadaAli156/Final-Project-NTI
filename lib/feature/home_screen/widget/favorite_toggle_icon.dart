@@ -1,8 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-import '../../../core/color_manager/color_manager.dart';
-
 class FavoriteToggleIcon extends StatefulWidget {
   final String productName;
   final String userId;

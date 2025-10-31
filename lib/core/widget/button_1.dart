@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:project_nti_app/core/color_manager/color_manager.dart';
-import 'package:flutter/material.dart';
-import 'package:project_nti_app/core/color_manager/color_manager.dart';
 
 class Button1 extends StatelessWidget {
   final String text;
@@ -54,11 +52,7 @@ class Button1 extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   if (iconPath != null) ...[
-                    Image.asset(
-                      iconPath!,
-                      height: 22,
-                      width: 22,
-                    ),
+                    Image.asset(iconPath!, height: 22, width: 22),
                     const SizedBox(width: 6),
                   ],
                   Text(
