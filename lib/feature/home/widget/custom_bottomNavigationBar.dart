@@ -16,10 +16,14 @@ class CustomBottomNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
+    final imageSize = screenWidth * 0.1;
+
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: EdgeInsets.all(screenWidth * 0.02),
       child: Container(
-        padding: EdgeInsets.all(8),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
           gradient: ColorManager.primaryColorGradient,
@@ -29,9 +33,12 @@ class CustomBottomNavigationBar extends StatelessWidget {
           hoverColor: Colors.grey,
           gap: 8,
           activeColor: Colors.black,
-          iconSize: 24,
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-          duration: Duration(milliseconds: 400),
+          iconSize: screenWidth * 0.07,
+          padding: EdgeInsets.symmetric(
+            horizontal: screenWidth * 0.05,
+            vertical: screenHeight * 0.015,
+          ),
+          duration: const Duration(milliseconds: 400),
           tabBackgroundColor: Colors.transparent,
           color: Colors.black,
           selectedIndex: currentIndex,
@@ -61,7 +68,15 @@ class CustomBottomNavigationBar extends StatelessWidget {
             GButton(
               icon: Icons.circle,
               iconColor: Colors.transparent,
-              leading: ClipRRect(child: Image.asset('assets/user.png')),
+              leading: ClipRRect(
+                borderRadius: BorderRadius.circular(50),
+                child: Image.asset(
+                  'assets/user.png',
+                  width: imageSize,
+                  height: imageSize,
+                  fit: BoxFit.cover,
+                ),
+              ),
               text: 'Profile',
               textStyle: StyleApp.textStyle20,
             ),

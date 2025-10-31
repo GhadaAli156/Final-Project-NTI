@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../core/color_manager/color_manager.dart';
 import '../../../core/utils/size_config.dart';
+import '../cubit/product_cubit.dart';
+
 class FilterBottomSheet extends StatefulWidget {
   const FilterBottomSheet({super.key});
 
@@ -11,11 +13,12 @@ class FilterBottomSheet extends StatefulWidget {
 
 class _FilterBottomSheetState extends State<FilterBottomSheet> {
   String selectedCategory = 'All';
-  double priceValue = 50;
+  double priceValue = 200;
 
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
+    final productCubit = context.read<ProductCubit>();
 
     return Padding(
       padding: EdgeInsets.all(SizeConfig.w(16)),
@@ -44,7 +47,6 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
           ),
           SizedBox(height: SizeConfig.h(16)),
 
-          // Category Filter
           Text(
             'Category',
             style: TextStyle(
@@ -56,23 +58,49 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
           Wrap(
             spacing: SizeConfig.w(8),
             children: [
-              for (var category in ['All', 'Clothes', 'Watches', 'Bags'])
-                ChoiceChip(
-                  label: Text(category),
-                  selected: selectedCategory == category,
-                  selectedColor: ColorManager.primaryColorGradient.colors.first,
-                  onSelected: (_) {
+              for (var category in ['PoPular', 'Clothes', 'Watches', 'Bags'])
+                GestureDetector(
+                  onTap: () {
                     setState(() {
                       selectedCategory = category;
                     });
                   },
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: SizeConfig.w(14),
+                      vertical: SizeConfig.h(8),
+                    ),
+                    decoration: BoxDecoration(
+                      gradient: selectedCategory == category
+                          ? ColorManager.primaryColorGradient
+                          : null,
+                      color: selectedCategory == category
+                          ? null
+                          : Colors.grey.shade200,
+                      borderRadius: BorderRadius.circular(SizeConfig.w(20)),
+                      border: Border.all(
+                        color: selectedCategory == category
+                            ? Colors.transparent
+                            : Colors.grey.shade400,
+                      ),
+                    ),
+                    child: Text(
+                      category,
+                      style: TextStyle(
+                        color: selectedCategory == category
+                            ? Colors.white
+                            : Colors.black87,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
                 ),
             ],
-          ),
+          )
+          ,
 
           SizedBox(height: SizeConfig.h(20)),
 
-          // Price Filter
           Text(
             'Max Price: \$${priceValue.round()}',
             style: TextStyle(
@@ -85,6 +113,8 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
             value: priceValue,
             min: 0,
             max: 200,
+            divisions: 20,
+            label: "\$${priceValue.round()}",
             onChanged: (v) {
               setState(() {
                 priceValue = v;
@@ -93,28 +123,38 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
           ),
 
           SizedBox(height: SizeConfig.h(16)),
-
-          // Apply Button
           SizedBox(
             width: double.infinity,
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: ColorManager.primaryColorGradient.colors.first,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(SizeConfig.w(20)),
-                ),
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                gradient: ColorManager.primaryColorGradient,
+                borderRadius: BorderRadius.circular(SizeConfig.w(20)),
               ),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: Padding(
-                padding: EdgeInsets.symmetric(vertical: SizeConfig.h(10)),
-                child: Text(
-                  'Apply Filters',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: SizeConfig.w(16),
-                    fontWeight: FontWeight.bold,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  elevation: 0,
+                  backgroundColor: Colors.transparent,
+                  shadowColor: Colors.transparent,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(SizeConfig.w(20)),
+                  ),
+                ),
+                onPressed: () {
+                  productCubit.filterProducts(
+                    category: selectedCategory,
+                    maxPrice: priceValue,
+                  );
+                  Navigator.pop(context);
+                },
+                child: Padding(
+                  padding: EdgeInsets.symmetric(vertical: SizeConfig.h(10)),
+                  child: Text(
+                    'Apply Filters',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: SizeConfig.w(16),
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),

@@ -71,18 +71,17 @@ class _FavoriteToggleIconState extends State<FavoriteToggleIcon> {
         onPressed: _toggleFavorite,
         icon: isFavorite
             ? ShaderMask(
-                shaderCallback: (Rect bounds) {
-                  return LinearGradient(
-                    colors: [Colors.red, Colors.orange],
-                  ).createShader(bounds);
-                },
+            shaderCallback: (Rect bounds) {
+              return ColorManager.primaryColorGradient
+                  .createShader(bounds);
+            },
                 child: const Icon(
                   Icons.favorite,
-                  size: 25,
+                  size: 28,
                   color: Colors.white,
                 ),
               )
-            : const Icon(Icons.favorite_border, size: 25, color: Colors.grey),
+            : const Icon(Icons.favorite_border, size: 28, color: Colors.grey),
       ),
     );
   }

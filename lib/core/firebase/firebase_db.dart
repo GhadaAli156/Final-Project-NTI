@@ -75,32 +75,43 @@ class FirebaseDataBase {
       ProductModel(
         name: 'Casual T-Shirt',
         price: 29.99,
-        image:
-            'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        image: 'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800',
         description: 'Soft cotton T-shirt perfect for everyday wear.',
         category: 'Clothes',
       ),
       ProductModel(
         name: 'Denim Jacket',
         price: 59.99,
-        image:
-            'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        image: 'https://images.unsplash.com/photo-1521223890158-f9f7c3d5d504?w=800',
         description: 'Stylish denim jacket for a cool look.',
         category: 'Clothes',
       ),
       ProductModel(
         name: 'Summer Dress',
         price: 49.99,
-        image: 'https://www.mytheresa.com/media/1094/1238/100/76/P01078119.jpg',
+        image: 'https://i.pinimg.com/736x/6b/b0/ae/6bb0ae7e3d9a126383fcd2ee129db4d2.jpg',//done
         description: 'Light and flowy dress for warm days.',
         category: 'Clothes',
       ),
       ProductModel(
         name: 'Graphic Hoodie',
         price: 39.99,
-        image:
-            'https://images.unsplash.com/photo-1520975918318-5b1a56b35ef9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxeDz24-gdHUVx2Ndg2yePJAN8Xj8QCBjFXg&s',
         description: 'Warm hoodie with a cool graphic print.',
+        category: 'Clothes',
+      ),
+      ProductModel(
+        name: 'Oversized Sweatshirt',
+        price: 34.99,
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0D66IV8oXfzUZ2QXY1w86o-KlWa4jHLKHVw&s',
+        description: 'Comfy oversized sweatshirt for relaxed style.',
+        category: 'Clothes',
+      ),
+      ProductModel(
+        name: 'Plaid Shirt',
+        price: 42.99,
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThisJYubnI1iidtz3yKdheD6RvSjTbYjLDVw&s',
+        description: 'Classic plaid shirt for everyday casual wear.',
         category: 'Clothes',
       ),
 
@@ -108,33 +119,46 @@ class FirebaseDataBase {
       ProductModel(
         name: 'Running Sneakers',
         price: 79.99,
-        image:
-            'https://images.unsplash.com/photo-1600180758891-2b547b1251d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        //done
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7QNE_b8OoOYG6SvcwIzP_sn9jBReH9CPyn8fw__4289Uz5T2D3edHziZ0jZArMWGH8xw&usqp=CAU',
         description: 'Lightweight running shoes with great grip.',
         category: 'Shoes',
       ),
       ProductModel(
         name: 'White Casual Sneakers',
         price: 69.99,
-        image:
-            'https://img.joomcdn.net/771862c7a2a906ff73612f20d13771b485db6369_original.jpeg',
+        //done
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF5zvK2lJGFNsZJaGuw0SjxD_lHv6W0BUFQw&s',
         description: 'Trendy white sneakers that match any outfit.',
         category: 'Shoes',
       ),
       ProductModel(
         name: 'Leather Boots',
         price: 89.99,
-        image:
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvFzUvde5cjuJ_E2AXLzz5cfdu9ndtfjFp_g&s',
+        //done
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvFzUvde5cjuJ_E2AXLzz5cfdu9ndtfjFp_g&s',
         description: 'Durable leather boots for all seasons.',
         category: 'Shoes',
       ),
       ProductModel(
         name: 'High-Top Canvas Sneakers',
         price: 64.99,
-        image:
-            'https://images.unsplash.com/photo-1600180758804-f5a1f8c83e3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSjKMxpD-f2-wBk-FFGFz0GC04FTg-ekHwng&s',
         description: 'Stylish high-top sneakers for everyday wear.',
+        category: 'Shoes',
+      ),
+      ProductModel(
+        name: 'Slip-On Trainers',
+        price: 54.99,
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm0SvwsAsW1DZordWcMxzaUIPRrk71kaxVEg&s',
+        description: 'Comfortable slip-on trainers for daily use.',
+        category: 'Shoes',
+      ),
+      ProductModel(
+        name: 'Retro Running Shoes',
+        price: 74.99,
+        image: 'https://www.fashionbeans.com/wp-content/uploads/2019/04/retro-sneakers-19-top-1.jpg',
+        description: 'Stylish retro sneakers with breathable fabric.',
         category: 'Shoes',
       ),
 
@@ -142,32 +166,44 @@ class FirebaseDataBase {
       ProductModel(
         name: 'Classic Leather Watch',
         price: 120.0,
-        image:
-            'https://i5.walmartimages.com/seo/OLEVS-Brown-Leather-Watches-Men-Big-Gold-Dial-Mens-Roman-Numerals-Watches-Diamond-Watch-Date-Luxury-Quartz-Men-s-Watches-Waterproof-Wrist-Watches-Lum_d628c0ae-5dea-4b6d-85b6-cc6039c3a4f5.de88df1e8110f072191eab120ad30add.png',
+        //done
+        image: 'https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dwbcf87c5d/images/Titan/Catalog/90189WL01_1.jpg?sw=600&sh=600',
         description: 'Elegant watch with a premium leather strap.',
         category: 'Watches',
       ),
       ProductModel(
         name: 'Smart Watch',
         price: 199.99,
-        image:
-            'https://images.unsplash.com/photo-1598970434795-0c54fe7c0642?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        image: 'https://m.media-amazon.com/images/I/61pIzNaNRWL.jpg', //done
         description: 'Stay connected and track fitness with this smart watch.',
         category: 'Watches',
       ),
       ProductModel(
         name: 'Gold Wristwatch',
         price: 250.0,
-        image:
-            'https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQzVdDeT_W-jH80feBXXu5KZIX88RWxvV_vA&s',//done
         description: 'Luxury gold-plated wristwatch for special occasions.',
         category: 'Watches',
       ),
       ProductModel(
         name: 'Fitness Smartwatch',
         price: 149.99,
-        image: 'https://cdn.mos.cms.futurecdn.net/Pk5ydxYo6ty2Q4SX9vznP6.jpg',
+        image: 'https://pyxis.nymag.com/v1/imgs/921/c0c/d56eeaa21522d8918ee1cedde9dea91293.rsquare.w600.jpg', //done
         description: 'Smartwatch with fitness tracking and notifications.',
+        category: 'Watches',
+      ),
+      ProductModel(
+        name: 'Digital Sports Watch',
+        price: 89.99,
+        image: 'https://m.media-amazon.com/images/I/616ZpI9EadL._AC_UY1000_.jpg',
+        description: 'Sporty digital watch with waterproof design.',
+        category: 'Watches',
+      ),
+      ProductModel(
+        name: 'Chronograph Steel Watch',
+        price: 139.99,
+        image: 'https://m.media-amazon.com/images/I/81SaDsBddtL._AC_UY350_.jpg',
+        description: 'Elegant stainless steel chronograph watch with precise detailing.',
         category: 'Watches',
       ),
 
@@ -175,34 +211,43 @@ class FirebaseDataBase {
       ProductModel(
         name: 'Leather Handbag',
         price: 99.99,
-        image:
-            'https://www.letanneur.us/cdn/shop/files/TEMI1014G05-d_c4c045a7-8a31-4b47-943a-85913ad5c3df.jpg?v=1752221074',
+        image: 'https://s.alicdn.com/@sc04/kf/H3445853a67034d678535459b352db2a8C.jpg?avif=close&webp=close',
         description: 'Stylish handbag crafted from genuine leather.',
         category: 'Bags',
       ),
       ProductModel(
         name: 'Travel Backpack',
         price: 79.99,
-        image:
-            'https://m.media-amazon.com/images/I/71CNbs4-ukL._AC_SL1447_.jpg',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPRn2oBgbG8l5ak3rlt3InaQ1rBD3MBc-GyA&s',
         description: 'Durable and spacious backpack for daily or travel use.',
         category: 'Bags',
       ),
       ProductModel(
         name: 'Mini Shoulder Bag',
         price: 49.99,
-        image:
-            'https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        image: 'https://m.media-amazon.com/images/I/41vFIMFbWHL._AC_UY1000_.jpg',
         description: 'Compact and chic shoulder bag for casual outings.',
         category: 'Bags',
       ),
       ProductModel(
         name: 'Eco Leather Tote Bag',
         price: 119.99,
-        image:
-            'https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-        description:
-            'Large tote bag made from eco-friendly leather alternative.',
+        image: 'https://cdn.iceberg.com.filoblu.com/rx/ofmt_webp/media/catalog/product/2/5/25IK2P1722769379000-U_3.JPG',
+        description: 'Large tote bag made from eco-friendly leather alternative.',
+        category: 'Bags',
+      ),
+      ProductModel(
+        name: 'Crossbody Bag',
+        price: 59.99,
+        image: 'https://m.media-amazon.com/images/I/51t3jnd1lUL._AC_SL1001_.jpg',
+        description: 'Trendy crossbody bag with adjustable strap.',
+        category: 'Bags',
+      ),
+      ProductModel(
+        name: 'Laptop Backpack',
+        price: 89.99,
+        image: 'https://m.media-amazon.com/images/I/717Rp03xdmL._AC_SL1500_.jpg',
+        description: 'Spacious laptop backpack with multiple compartments.',
         category: 'Bags',
       ),
     ];

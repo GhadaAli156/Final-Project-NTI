@@ -32,4 +32,34 @@ class ProductCubit extends Cubit<ProductState> {
     }).toList();
     emit(ProductSuccess(filteredProducts));
   }
+
+  //search products
+  void searchProducts(String query) {
+    if (query.isEmpty) {
+      emit(ProductSuccess(products));
+      return;
+    }
+
+    final searchResult = products.where((product) {
+      return product.name.toLowerCase().contains(query.toLowerCase());
+    }).toList();
+
+    emit(ProductSuccess(searchResult));
+  }
+
+  //filter products
+  void filterProducts({String? category, double? maxPrice}) {
+    List<ProductModel> filtered = products;
+
+    if (category != null && category != 'All') {
+      filtered = filtered.where((p) => p.category == category).toList();
+    }
+
+    if (maxPrice != null) {
+      filtered = filtered.where((p) => p.price <= maxPrice).toList();
+    }
+
+    emit(ProductSuccess(filtered));
+  }
+
 }

@@ -9,13 +9,14 @@ import 'feature/authentication/signup_screen/signup_screen.dart';
 import 'feature/home/home.dart';
 import 'feature/home_screen/cubit/product_cubit.dart';
 import 'feature/onboarding_screen/onboarding_screen.dart';
+import 'feature/profile_screen/profile_screen.dart';
 import 'feature/splash_screen/splash_screen.dart';
 import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  await FirebaseDataBase().ProductToFirebase();
+  //await FirebaseDataBase().ProductToFirebase();
   runApp(const MyApp());
 }
 
@@ -33,6 +34,10 @@ class MyApp extends StatelessWidget {
           create: (context) =>
               ProductCubit(firebaseDataBase: FirebaseDataBase()),
         ),
+        BlocProvider(
+          create: (context) => UserCubit(FirebaseDataBase()),
+          child: ProfileScreen(),
+        )
       ],
       child: MaterialApp(
         initialRoute: AppRoutes.splash,
@@ -41,7 +46,7 @@ class MyApp extends StatelessWidget {
           AppRoutes.onboarding: (context) => const OnboardingScreen(),
           AppRoutes.login: (context) => const LoginScreen(),
           AppRoutes.signup: (context) => const SignupScreen(),
-          AppRoutes.home: (context) => const Home(),
+          AppRoutes.home: (context) => const Home( ),
         },
         debugShowCheckedModeBanner: false,
       ),
