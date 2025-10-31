@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project_nti_app/core/color_manager/color_manager.dart';
+import 'package:flutter/material.dart';
+import 'package:project_nti_app/core/color_manager/color_manager.dart';
 
 class Button1 extends StatelessWidget {
   final String text;

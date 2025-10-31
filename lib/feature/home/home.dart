@@ -7,7 +7,7 @@ import '../notification_screen/notification_screen.dart';
 
 class Home extends StatefulWidget {
   final String? name;
-  const Home({super.key,this.name});
+  const Home({super.key, this.name});
 
   @override
   State<Home> createState() => _HomeState();
@@ -18,7 +18,6 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-
     final List<Widget> screens = [
       HomeScreenProduct(name: widget.name ?? ''),
       FavoriteScreen(),
