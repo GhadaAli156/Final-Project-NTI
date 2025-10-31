@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_nti_app/order_details/custom_row_status.dart';
+import 'custom_row_status.dart';
 
 class CurrentStatusCard extends StatelessWidget {
   const CurrentStatusCard({super.key});

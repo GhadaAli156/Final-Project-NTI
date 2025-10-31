@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:project_nti_app/order_details/address_card.dart';
-import 'package:project_nti_app/core/widget/custom_appbar.dart';
-import 'package:project_nti_app/order_details/custom_button.dart';
-import 'package:project_nti_app/order_details/custom_status.dart';
-import 'package:project_nti_app/order_details/order_card.dart';
-import 'package:project_nti_app/order_details/payment.dart';
-import 'package:project_nti_app/order_details/section_tile.dart';
+import 'package:project_nti_app/feature/order_details/widgets/address_card.dart';
+import 'package:project_nti_app/feature/order_details/widgets/custom_button.dart';
+import 'package:project_nti_app/feature/order_details/widgets/custom_status.dart';
+import 'package:project_nti_app/feature/order_details/widgets/order_card.dart';
+import 'package:project_nti_app/feature/order_details/widgets/payment.dart';
+import 'package:project_nti_app/feature/order_details/widgets/section_tile.dart';
+
+import '../../core/widget/custom_appbar.dart';
 
 class OrderDetailsScreen extends StatelessWidget {
   const OrderDetailsScreen({super.key});
@@ -14,7 +15,7 @@ class OrderDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: const CustomAppBar(),
+      appBar: CustomAppBar(),
       body: const SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         child: Column(

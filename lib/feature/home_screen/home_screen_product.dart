@@ -6,6 +6,7 @@ import 'package:project_nti_app/feature/home_screen/widget/categoty_selector.dar
 import 'package:project_nti_app/feature/home_screen/widget/custom_home_app_bar.dart';
 import 'package:project_nti_app/feature/home_screen/widget/custom_search_filter.dart';
 import 'package:project_nti_app/feature/home_screen/widget/favorite_toggle_icon.dart';
+import 'package:project_nti_app/feature/show_product_details/show_product_details.dart';
 import '../../core/color_manager/color_manager.dart';
 import '../../core/utils/size_config.dart';
 
@@ -108,7 +109,10 @@ class _HomeScreenProductState extends State<HomeScreenProduct> {
                         mainAxisSpacing: SizeConfig.h(10),
                       ),
                       itemBuilder: (context, index) => GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => ShowDetailsScreen(product: state.products[index],)
+                          ,));
+                        },
                         child: Container(
                           decoration: BoxDecoration(
                             color: Colors.grey[100],
