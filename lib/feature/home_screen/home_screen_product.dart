@@ -50,7 +50,6 @@ class _HomeScreenProductState extends State<HomeScreenProduct> {
               const CustomSearchFilter(),
               SizedBox(height: SizeConfig.h(20)),
 
-              // ✅ Category List
               SizedBox(
                 height: SizeConfig.h(70),
                 child: ListView.builder(
@@ -63,7 +62,11 @@ class _HomeScreenProductState extends State<HomeScreenProduct> {
                       label: category['label'],
                       isSelected: selectedIndex == index,
                       onPressed: () {
-                        context.read<ProductCubit>().filterProductsByType(category['label']);
+                        if (category['label'] == 'Popular') {
+                          context.read<ProductCubit>().getProducts();
+                        } else {
+                          context.read<ProductCubit>().filterProductsByType(category['label']);
+                        }
                         setState(() {
                           selectedIndex = index;
                         });
@@ -75,7 +78,6 @@ class _HomeScreenProductState extends State<HomeScreenProduct> {
 
               SizedBox(height: SizeConfig.h(20)),
 
-              // ✅ Products Grid
               BlocConsumer<ProductCubit, ProductState>(
                 builder: (context, state) {
                   if (state is ProductError) {

@@ -32,16 +32,9 @@ class CategoryItem extends StatelessWidget {
           gradient: isSelected
               ? ColorManager.primaryColorGradient
               : const LinearGradient(
-            colors: [Colors.white, Colors.white],
+            colors: [Colors.transparent, Colors.transparent],
           ),
           borderRadius: BorderRadius.circular(SizeConfig.w(50)),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.08),
-              blurRadius: 6,
-              offset: const Offset(1, 3),
-            ),
-          ],
         ),
         child: Row(
           children: [
@@ -62,7 +55,7 @@ class CategoryItem extends StatelessWidget {
               child: Icon(
                 icon,
                 color: Colors.black54,
-                size: SizeConfig.w(22),
+                size: SizeConfig.w(28),
               ),
             ),
             SizedBox(width: SizeConfig.w(8)),
