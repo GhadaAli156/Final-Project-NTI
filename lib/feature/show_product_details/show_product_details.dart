@@ -211,7 +211,7 @@ class _ShowDetailsScreenState extends State<ShowDetailsScreen> {
                           ),
                           child: TextButton(
                             onPressed: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => OrderDetailsScreen(),));
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => OrderDetailsScreen(product: widget.product,),));
                             },
                             child: Text(
                               'Order Details',

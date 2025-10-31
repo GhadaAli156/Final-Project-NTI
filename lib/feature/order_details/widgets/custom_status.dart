@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:project_nti_app/feature/home_screen/model/product_model.dart';
 import 'custom_row_status.dart';
 
 class CurrentStatusCard extends StatelessWidget {
-  const CurrentStatusCard({super.key});
+  const CurrentStatusCard({super.key,required this.model});
+  final ProductModel model;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +36,7 @@ class CurrentStatusCard extends StatelessWidget {
           ),
 
           const SizedBox(height: 16),
-        CustomStatus()
+          CustomStatus(model: model),
         ],
       ),
     );

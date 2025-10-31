@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:project_nti_app/feature/home_screen/model/product_model.dart';
 
 class OrderInfoCard extends StatelessWidget {
-  const OrderInfoCard({super.key});
+  const OrderInfoCard({super.key,required this.product});
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
@@ -19,17 +21,20 @@ class OrderInfoCard extends StatelessWidget {
               color: Colors.white, 
               width: 80,
               height: 80,
-              child: Image.asset("assets/image2.png", fit: BoxFit.contain),
+              child: Image.network(
+                product.image,
+                fit: BoxFit.contain,
+              ),
             ),
           ),
 
           const SizedBox(width: 12),
-          const Expanded(
+          Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Puma Running Shoe",
+                  product.name,
                   style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 2),
@@ -40,7 +45,7 @@ class OrderInfoCard extends StatelessWidget {
                   children: [
                     Text("Quantity: 1", style: TextStyle(fontSize: 13)),
                     Text(
-                      "Price: \$23.87",
+                      "Price: \$${product.price.toString()}",
                       style: TextStyle(color: Colors.blue),
                     ),
                   ],
