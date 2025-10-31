@@ -1,14 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../core/color_manager/color_manager.dart';
 import '../../../core/utils/size_config.dart';
+import '../cubit/product_cubit.dart';
 import 'filter_bottom_sheet.dart';
 
-class CustomSearchFilter extends StatelessWidget {
+class CustomSearchFilter extends StatefulWidget {
   const CustomSearchFilter({super.key});
+
+  @override
+  State<CustomSearchFilter> createState() => _CustomSearchFilterState();
+}
+
+class _CustomSearchFilterState extends State<CustomSearchFilter> {
+  final TextEditingController _controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
+    final productCubit = context.read<ProductCubit>();
 
     return Row(
       children: [
@@ -16,7 +26,7 @@ class CustomSearchFilter extends StatelessWidget {
           child: Container(
             padding: EdgeInsets.symmetric(
               horizontal: SizeConfig.w(12),
-              vertical: SizeConfig.h(8),
+              vertical: SizeConfig.h(4),
             ),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(SizeConfig.w(30)),
@@ -24,23 +34,34 @@ class CustomSearchFilter extends StatelessWidget {
             ),
             child: Row(
               children: [
-                Icon(
-                  Icons.search,
-                  size: SizeConfig.w(22),
-                  color: Colors.grey[700],
-                ),
+                Icon(Icons.search, color: Colors.grey[700]),
                 SizedBox(width: SizeConfig.w(8)),
-                Text(
-                  'What do you need?',
-                  style: TextStyle(
-                    color: Colors.grey[700],
-                    fontSize: SizeConfig.w(14),
+                Expanded(
+                  child: TextField(
+                    controller: _controller,
+                    decoration: const InputDecoration(
+                      hintText: 'What do you need?',
+                      border: InputBorder.none,
+                    ),
+                    onChanged: (query) {
+                      productCubit.searchProducts(query);
+                    },
                   ),
                 ),
+                if (_controller.text.isNotEmpty)
+                  GestureDetector(
+                    onTap: () {
+                      _controller.clear();
+                      productCubit.getProducts();
+                      FocusScope.of(context).unfocus();
+                    },
+                    child: Icon(Icons.clear, color: Colors.grey[600]),
+                  ),
               ],
             ),
           ),
         ),
+
         GestureDetector(
           onTap: () {
             showModalBottomSheet(
@@ -49,8 +70,7 @@ class CustomSearchFilter extends StatelessWidget {
                 borderRadius: BorderRadius.vertical(top: Radius.circular(25)),
               ),
               backgroundColor: Colors.white,
-                builder: (_) => FilterBottomSheet(),
-
+              builder: (_) => const FilterBottomSheet(),
             );
           },
           child: Container(
@@ -72,5 +92,3 @@ class CustomSearchFilter extends StatelessWidget {
     );
   }
 }
-
-
