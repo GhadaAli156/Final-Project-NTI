@@ -14,12 +14,12 @@ The app provides a simple and clean shopping experience — users can browse pro
 - 🛒 **Product Details** with image, price, description
 - 🔍 **Filter & Search** functionality
 - ⚙️ **Firebase Integration** for backend
-- 🌙 **Dark & Light Mode Support**
 - 📱 Responsive design for both Android and iOS
 
 ---
 
 ## 🧰 Technologies & Tools
+
 | Category | Technology |
 |-----------|-------------|
 | Framework | Flutter (Dart) |
@@ -30,7 +30,10 @@ The app provides a simple and clean shopping experience — users can browse pro
 | IDE | Android Studio / VS Code |
 
 ---
+
 ## 📁 Project Structure
+
+```plaintext
 lib/
 │
 ├── core/
@@ -120,4 +123,3 @@ lib/
 │
 ├── main.dart
 └── firebase_options.dart
----
