@@ -29,6 +29,7 @@ The app provides a simple and clean shopping experience — users can browse pro
 | Version Control | Git & GitHub |
 | IDE | Android Studio / VS Code |
 
+---
 ## 📁 Project Structure
 lib/
 │
@@ -119,5 +120,4 @@ lib/
 │
 ├── main.dart
 └── firebase_options.dart
-
-
+---
